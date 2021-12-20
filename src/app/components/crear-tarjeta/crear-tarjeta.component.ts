@@ -13,13 +13,17 @@ export class CrearTarjetaComponent implements OnInit {
   constructor(private fb: FormBuilder) { 
     this.form = this.fb.group({
       titular: ['', Validators.required],
-      numeroTarjeta: ['', Validators.required],
-      fechaExpiracion: ['', Validators.required],
-      cvv: ['', Validators.required],
+      numeroTarjeta: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
+      fechaExpiracion: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
+      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(3)]],
     });
   }
 
   ngOnInit(): void {
+  }
+
+  crearTarjeta(){
+    console.log(this.form);
   }
 
 }
