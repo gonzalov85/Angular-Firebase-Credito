@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-tarjeta',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearTarjetaComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      titular: ['', Validators.required],
+      numeroTarjeta: ['', Validators.required],
+      fechaExpiracion: ['', Validators.required],
+      cvv: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
   }
