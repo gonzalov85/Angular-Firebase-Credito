@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tarjetacreditoangular-5ed9c": {
+      "hosting": {
+        "TarjetaCredito": [
+          "tarjetacreditoangular-5ed9c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tarjetacreditoangular-5ed9c"
+  }
+}
