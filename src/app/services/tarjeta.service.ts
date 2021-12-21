@@ -9,7 +9,7 @@ export class TarjetaService {
 
   constructor(private firebase: AngularFirestore) { }
 
-  guardarTarjeta(tarjeta: TarjetaCredito){
-    this.firebase.collection('tarjetas').add(tarjeta);
+  guardarTarjeta(tarjeta: TarjetaCredito): Promise<any>{
+    return this.firebase.collection('tarjetas').add(tarjeta);
   }
 }
