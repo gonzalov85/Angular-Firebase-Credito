@@ -3,12 +3,12 @@
         <h5 class="titulo">LISTAR TARJETA</h5>
         <table class="table">
             <tbody>
-                <tr>
-                    <td>nombre</td>
-                    <td>numero</td>
-                    <td>fecha</td>
+                <tr *ngFor="let tarjeta of listTarjetas">
+                    <td>{{tarjeta.titular}}</td>
+                    <td>{{tarjeta.numeroTarjeta}}</td>
+                    <td>{{tarjeta.fechaExpiracion}}</td>
                     <td><i class="far fa-edit text-info"></i>
-                        <i class="far fa-trash-alt text-danger"></i></td>
+                        <i (click)="eliminarTarjeta(tarjeta.id)" class="far fa-trash-alt text-danger"></i></td>
                 </tr>
             </tbody>
         </table>
