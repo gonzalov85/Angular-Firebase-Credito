@@ -27,14 +27,17 @@ export class ListarTarjetaComponent implements OnInit {
             ...element.payload.doc.data()
           })
         });
-        console.log(this.listTarjetas);
     })
   }
   eliminarTarjeta(id:any){
     this._tarjetaService.eliminarTarjeta(id).then(()=>{
-
+      this.toastr.error('La tarjeta fue elminidada con éxito', 'Registro Eliminado');
     }, error => {
-      console.log(error);
+      this.toastr.error('Ha ocurrido un error', 'Error');
     })
+  }
+
+  editarTarjeta(tarjeta:TarjetaCredito){
+    this._tarjetaService.addTarjetaEdit(tarjeta);
   }
 }
