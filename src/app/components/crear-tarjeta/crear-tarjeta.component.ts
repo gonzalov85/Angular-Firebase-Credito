@@ -13,6 +13,7 @@ export class CrearTarjetaComponent implements OnInit {
 
   form: FormGroup;
   loading = false;
+  titulo = "Agregar Tarjeta";
 
   constructor(private fb: FormBuilder,
               private _tarjetaSerice: TarjetaService,
@@ -28,7 +29,17 @@ export class CrearTarjetaComponent implements OnInit {
   ngOnInit(): void {
     this._tarjetaSerice.getTarjetaEdit().subscribe(data => {
       console.log(data);
+      this.titulo = "Editar Tarjeta";
+      this.form.patchValue({
+        titular: data.titular,
+        numeroTarjeta: data.numeroTarjeta,
+        fechaExpiracion: data.fechaExpiracion,
+        cvv: data.cvv
+      });
     })
+  }
+
+  guardarTarjeta(){
   }
 
   crearTarjeta(){
