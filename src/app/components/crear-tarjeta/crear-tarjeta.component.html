@@ -5,7 +5,7 @@
         <span class="visually-hidden">Loading...</span>
     </div>
     </h5>
-    <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
+    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
         <div class="input-group input-group-lg mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-circle" 
                 [class.green-icon]="this.form.get('titular')?.valid"

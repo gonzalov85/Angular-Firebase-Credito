@@ -16,6 +16,10 @@ export class TarjetaService {
     return this.firestore.collection('tarjetas').add(tarjeta);
   }
 
+  editarTarjeta(id:string, tarjeta: any): Promise<any>{
+    return this.firestore.collection('tarjetas').doc(id).update(tarjeta);
+  }
+
   obtenerTarjeta(): Observable<any>{
     //snapshotChanges es un get sincronizado va a ctualizando los cambios
     return this.firestore.collection('tarjetas', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges(); 
